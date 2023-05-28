@@ -1,56 +1,57 @@
-import {getUsersInfo} from "./getUsersInfo";
+import { getUsersInfo } from "./getUsersInfo";
 
-const initialDataList = await getUsersInfo();
-let usersDataList = await getUsersInfo();
+const initialDataList = getFirstInitData();
+let usersDataList = getFirstInitData();
 let usersDeletedId = [];
 let deletedUsersInfo = [];
 let selectedId = null;
+
+const getFirstInitData = async () => {
+  return await getUsersInfo();
+};
 export const getInitialData = () => {
-    return initialDataList;
-}
+  return initialDataList;
+};
 export const getUsersList = () => {
-    return usersDataList;
+  return usersDataList;
 };
 
 export const setUsersList = (newData) => {
-    usersDataList = newData;
+  usersDataList = newData;
 };
 
 export const getDeletedId = () => {
-    return usersDeletedId;
+  return usersDeletedId;
 };
 
 export const setDeletedId = (newId) => {
-    usersDeletedId.push(newId);
+  usersDeletedId.push(newId);
 };
 
 export const createNewDeletedId = (newArr) => {
-
-    usersDeletedId = [...newArr];
+  usersDeletedId = [...newArr];
 };
 
 export const getDeletedUsersInfo = () => {
-    return deletedUsersInfo;
+  return deletedUsersInfo;
 };
 
 export const setDeletedUsersInfo = (newData) => {
-    deletedUsersInfo.push(newData);
+  deletedUsersInfo.push(newData);
 };
 
 export const createNewDeletedUsersInfo = (newArr) => {
-
-    deletedUsersInfo = [...newArr];
+  deletedUsersInfo = [...newArr];
 };
 
 export const getSelectedId = () => {
-    return selectedId;
+  return selectedId;
 };
 
 export const setSelectedId = (newId) => {
-    selectedId = newId
+  selectedId = newId;
 };
 
-
-export const filteredUsersList = (newArr) =>{
-    setUsersList(newArr.filter(user => !usersDeletedId.includes(user.id)))
-}
+export const filteredUsersList = (newArr) => {
+  setUsersList(newArr.filter((user) => !usersDeletedId.includes(user.id)));
+};

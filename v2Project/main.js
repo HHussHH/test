@@ -1,4 +1,3 @@
-//Тут комментарии будут потом....
 import renderList from "./scripts/renderList.js";
 import {
   handleConfirmSkip,

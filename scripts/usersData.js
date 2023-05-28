@@ -1,11 +1,15 @@
 import { getUsersInfo } from "./getUsersInfo";
 
 let skipCount = 0;
-let usersDataList = await getUsersInfo();
+let usersDataList = getFirstInitData();
 let usersDeletedId = [];
 
-export const getUsersList = async (skip) => {
-  usersDataList = await getUsersInfo(skip);
+const getFirstInitData = async (skip = 0) => {
+  return await getUsersInfo(skip);
+};
+
+export const getUsersList = (skip) => {
+  usersDataList = getFirstInitData(skip);
   usersDataList = usersDataList.filter(
     (user) => !usersDeletedId.includes(user.id)
   );
