@@ -1,0 +1,49 @@
+//main: ../style.less
+.nextPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  @media (min-width: @TV) {
+    gap: 15px;
+  }
+  &__counter {
+    text-align: center;
+    color: @gray-dark;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    @media (min-width: @TV) {
+      font-size: 18px;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+
+    padding: 8px 16px 8px 16px;
+    border-radius: 6px;
+    border: none;
+
+    color: #000;
+    background-color: @gray;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    width: 143px;
+
+    @media (min-width: @TV) {
+      padding: 10px 30px;
+      border-radius: 6px;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 17px;
+
+      width: 243px;
+    }
+  }
+}

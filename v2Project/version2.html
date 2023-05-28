@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users List App</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <h1 class="header__inner__title">admin customer service</h1>
+          <nav class="header__inner__nav">
+            <a href="../index.html" class="header__inner__nav-link"
+              >Список покупателей v1</a
+            >
+            <a href="./version2.html" class="header__inner__nav-link"
+              >Список покупателей v2</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="app">
+      <div class="container">
+        <div class="delIdList">
+          <h2 class="delIdList__title"></h2>
+          <ul class="delIdList__list">
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <ul class="userList"></ul>
+        <div class="nextPage">
+          <p id="userCounter" class="nextPage__counter"></p>
+          <button id="morePage" class="nextPage__btn">Загрузить еще</button>
+          <button id="lessPage" class="nextPage__btn">Скрыть элементы</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="modalWindow display-none">
+      <div class="modalWindow__content">
+        <div class="modalWindow__content__header">
+          <h2 class="modalWindow__content__header-title">
+            Удалите пользователя
+          </h2>
+          <button class="modalWindow__content__header-close"></button>
+        </div>
+        <p class="modalWindow__content-description">
+          Вы уверены, что хотите удалить пользователя?
+        </p>
+        <div>
+          <button id="confirmDeleteButton" class="modalWindow__content-btn">
+            Подтвердить
+          </button>
+          <button id="confirmRecoveryButton" class="modalWindow__content-btn">
+            Восстановить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="/scripts/modalWindow.js"></script>
+  </body>
+</html>

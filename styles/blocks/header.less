@@ -1,0 +1,72 @@
+//main: ../style.less
+.header {
+  top: 0px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid @gray;
+  @media (min-width: @TV) {
+    border-bottom: 2px solid @gray;
+  }
+
+  &__inner {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row;
+    @media (min-width: @TV) {
+      height: 70px;
+    }
+    @media (max-width: @mobile) {
+      flex-direction: row;
+      gap: 0px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__title {
+      text-transform: capitalize;
+
+      font-weight: 600;
+      font-size: 20px;
+
+      line-height: 24px;
+
+      color: #000;
+
+      @media (min-width: @TV) {
+        font-size: 26px;
+      }
+
+      @media (max-width: @tablet) {
+        font-size: 14px;
+      }
+      @media (max-width: @mobile) {
+        font-size: 18px;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      gap: 30px;
+      @media (max-width: @tablet) {
+        flex-direction: column;
+        gap: 0px;
+      }
+      &-link {
+        color: @gray-dark;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 17px;
+        @media (min-width: @TV) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.header__fixed {
+  position: fixed;
+  top: 0;
+  transition: all 0.2s linear;
+}

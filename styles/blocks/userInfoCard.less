@@ -1,0 +1,94 @@
+//main: ../style.less
+.userList {
+  margin-top: 56px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__user {
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 120px;
+    border: 1px solid @gray;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: @gray;
+    }
+    @media (min-width: @TV) {
+      height: 150px;
+      border: 2px solid @gray;
+      border-radius: 8px;
+    }
+    &__card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        border: 1px solid @gray;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @media (min-width: @TV) {
+          width: 90px;
+          height: 90px;
+        }
+        @media (max-width: @tablet) {
+          width: 60px;
+          height: 60px;
+        }
+        @media (max-width: @mobile) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        @media (min-width: @TV) {
+          gap: 20px;
+        }
+        &-firstName {
+          color: #000;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19.5px;
+          @media (min-width: @TV) {
+            font-size: 22px;
+          }
+        }
+        &-email {
+          color: @gray-dark;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 17px;
+          @media (min-width: @TV) {
+            font-size: 18px;
+          }
+          @media (max-width: @tablet) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      cursor: pointer;
+      @media (min-width: @TV) {
+        img {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}

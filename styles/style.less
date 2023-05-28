@@ -1,0 +1,69 @@
+//compress: false
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  width: 1137px;
+  margin: 0 auto;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.of-hidden {
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+}
+
+@media (min-width: @TV) {
+  .container {
+    width: 1600px;
+  }
+}
+
+@media (max-width: @laptop) {
+  .container {
+    width: 767px;
+  }
+}
+
+@media (max-width: @tablet) {
+  .container {
+    width: 400px;
+  }
+}
+
+@media (max-width: @mobile) {
+  .container {
+    width: 300px;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+@import "./vars.less";
+@import "./blocks/header.less";
+@import "./blocks/userInfoCard.less";
+@import "./blocks/loadMoreButton.less";
+@import "./blocks/modalWindow.less";
+@import "./blocks/deletedList.less";
+@import "./blocks/footer.less";
