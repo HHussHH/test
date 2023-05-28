@@ -1,14 +1,15 @@
 import { getUsersInfo } from "./getUsersInfo";
 
+const getFirstInitData = async () => {
+  return await getUsersInfo();
+};
+
 const initialDataList = getFirstInitData();
 let usersDataList = getFirstInitData();
 let usersDeletedId = [];
 let deletedUsersInfo = [];
 let selectedId = null;
 
-const getFirstInitData = async () => {
-  return await getUsersInfo();
-};
 export const getInitialData = () => {
   return initialDataList;
 };
@@ -52,6 +53,8 @@ export const setSelectedId = (newId) => {
   selectedId = newId;
 };
 
-export const filteredUsersList = (newArr) => {
-  setUsersList(newArr.filter((user) => !usersDeletedId.includes(user.id)));
+export const filteredUsersList = async (newArr) => {
+  setUsersList(
+    await newArr.filter((user) => !usersDeletedId.includes(user.id))
+  );
 };

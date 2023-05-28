@@ -1,13 +1,13 @@
 import { updateUserCount } from "./paginationSystem.js";
 import { setUsersList, getUsersList } from "./usersData.js";
-import {openDeleteMenu} from "./deleteButtonSystem.js";
+import { openDeleteMenu } from "./deleteButtonSystem.js";
 
 let maxCountViewUsers = 5;
 
-const renderList = (newCount = maxCountViewUsers) => {
+const renderList = async (newCount = maxCountViewUsers) => {
   const userList = document.querySelector(".userList");
 
-  const usersInfo = getUsersList();
+  const usersInfo = await getUsersList();
 
   maxCountViewUsers = newCount;
   userList.innerHTML = "";
@@ -16,8 +16,8 @@ const renderList = (newCount = maxCountViewUsers) => {
     if (userList.childElementCount === maxCountViewUsers) return;
     const li = document.createElement("li");
     li.classList.add("userList__user");
-    li.id = user.id
-    li.addEventListener("click", () => openDeleteMenu(user.id))
+    li.id = user.id;
+    li.addEventListener("click", () => openDeleteMenu(user.id));
     li.innerHTML = `
     <div class="userList__user__card">
         <img class="userList__user__card-icon" src="${user.image}"/>
@@ -34,7 +34,6 @@ const renderList = (newCount = maxCountViewUsers) => {
       `;
     userList.appendChild(li);
   });
-
 
   updateUserCount(usersInfo.length);
   setUsersList(usersInfo);
